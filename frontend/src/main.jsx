@@ -9,13 +9,13 @@ import {
 import App from "./App.jsx";
 import "./index.css";
 import HomeScreen from "./screens/HomeScreen.jsx";
-import ProductPage from "./screens/ProductPage.jsx";
+import ProductScreen from "./screens/ProductScreen.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} element={<HomeScreen />} />
-      <Route path="product/:slig" element={<ProductPage />} />
+      <Route path="product/:slug" element={<ProductScreen />} />
       {/* <Route path="dashboard" element={<Dashboard />} /> */}
       {/* ... etc. */}
     </Route>

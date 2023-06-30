@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 function App() {
   return (
     <div>
       <header>
-        <a href="/">Amazona</a>
+        <Link to="/">Amazona</Link>
       </header>
 
       <main>

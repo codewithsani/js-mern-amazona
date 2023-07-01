@@ -6,6 +6,6 @@ export default function MessageBox(props) {
 }
 
 MessageBox.propTypes = {
-  variant: PropTypes.string.isRequired, // Add the missing prop type validation
-  children: PropTypes.string.isRequired, // Add the missing prop type validation
+  variant: PropTypes.string, // Add the missing prop type validation
+  children: PropTypes.array.isRequired, // Add the missing prop type validation
 };

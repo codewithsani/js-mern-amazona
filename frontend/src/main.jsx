@@ -15,6 +15,7 @@ import axios from "axios";
 import { HelmetProvider } from "react-helmet-async";
 import { StoreProvider } from "./Store";
 import CartScreen from "./screens/CartScreen";
+import SigninScreen from "./screens/SigninScreen";
 
 axios.defaults.baseURL = import.meta.env.DEV ? "http://localhost:5000" : "/";
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route index={true} element={<HomeScreen />} />
       <Route path="product/:slug" element={<ProductScreen />} />
       <Route path="/cart" element={<CartScreen />} />
+      <Route path="/signin" element={<SigninScreen />} />
       {/* <Route path="dashboard" element={<Dashboard />} /> */}
       {/* ... etc. */}
     </Route>

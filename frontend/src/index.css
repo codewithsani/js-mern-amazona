@@ -1,5 +1,4 @@
-body {
-  margin: 0;
+:root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -8,19 +7,12 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-header {
-  background-color: #404040;
-  padding: 1rem;
-}
-
-header a {
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
+.site-container {
+  min-height: 100vh;
 }
 
 main {
-  padding: 1rem;
+  flex: 1;
 }
 .products {
   display: flex;
@@ -34,14 +26,8 @@ main {
 }
 .product img {
   width: 100%;
-  max-width: 250px;
+  max-width: 400px;
 }
 .product-info {
   padding: 1rem;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
 }

@@ -15,7 +15,7 @@ function App() {
       </header>
 
       <main>
-        <Container>
+        <Container className="mt-3">
           <Outlet />
         </Container>
       </main>

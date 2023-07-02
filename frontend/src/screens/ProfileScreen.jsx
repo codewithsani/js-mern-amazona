@@ -35,11 +35,11 @@ export default function ProfileScreen() {
 
   const submitHandler = async (e) => {
     e.preventDefault(loadingUpdate);
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
     try {
-      if (password !== confirmPassword) {
-        toast.error("Passwords do not match");
-        return;
-      }
       const { data } = await axios.put(
         "/api/users/profile",
         {
@@ -93,7 +93,6 @@ export default function ProfileScreen() {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            required
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
@@ -101,7 +100,6 @@ export default function ProfileScreen() {
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             type="password"
-            required
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </Form.Group>

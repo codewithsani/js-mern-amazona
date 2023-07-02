@@ -1,7 +1,7 @@
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import axios from "axios";
 import { useContext } from "react";
 import { Store } from "../Store";
@@ -48,7 +48,7 @@ function Product(props) {
     </Card>
   );
 }
-Product.propTypes = {
-  product: PropTypes.object.isRequired, // Add the missing prop type validation
-};
+// Product.propTypes = {
+//   product: PropTypes.object.isRequired, // Add the missing prop type validation
+// };
 export default Product;

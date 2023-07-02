@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 function Rating(props) {
   const { rating, numReviews } = props;
   return (
@@ -62,8 +62,8 @@ function Rating(props) {
     </div>
   );
 }
-Rating.propTypes = {
-  rating: PropTypes.number.isRequired, // Add the missing prop type validation
-  numReviews: PropTypes.number.isRequired, // Add the missing prop type validation
-};
+// Rating.propTypes = {
+//   rating: PropTypes.number.isRequired, // Add the missing prop type validation
+//   numReviews: PropTypes.number.isRequired, // Add the missing prop type validation
+// };
 export default Rating;

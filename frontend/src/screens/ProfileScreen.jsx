@@ -24,8 +24,8 @@ const reducer = (state, action) => {
 export default function ProfileScreen() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
-  const [name, setName] = useState(userInfo.name);
-  const [email, setEmail] = useState(userInfo.email);
+  const [name, setName] = useState(userInfo?.name);
+  const [email, setEmail] = useState(userInfo?.email);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -34,7 +34,7 @@ export default function ProfileScreen() {
   });
 
   const submitHandler = async (e) => {
-    e.preventDefault();
+    e.preventDefault(loadingUpdate);
     try {
       if (password !== confirmPassword) {
         toast.error("Passwords do not match");
@@ -80,7 +80,7 @@ export default function ProfileScreen() {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="name">
+        <Form.Group className="mb-3" controlId="Email">
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
@@ -93,13 +93,15 @@ export default function ProfileScreen() {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
+            required
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
+        <Form.Group className="mb-3" controlId="confirmPassword">
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             type="password"
+            required
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </Form.Group>

@@ -22,6 +22,7 @@ import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
+import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 
 axios.defaults.baseURL = import.meta.env.DEV ? "http://localhost:5000" : "/";
 
@@ -35,8 +36,10 @@ const router = createBrowserRouter(
       <Route path="/signup" element={<SignupScreen />} />
       <Route path="/placeorder" element={<PlaceOrderScreen />} />
       <Route path="/order/:id" element={<OrderScreen />} />
+      <Route path="/orderhistory" element={<OrderHistoryScreen />} />
       <Route path="/shipping" element={<ShippingAddressScreen />} />
       <Route path="/payment" element={<PaymentMethodScreen />} />
+
       {/* <Route path="dashboard" element={<Dashboard />} /> */}
       {/* ... etc. */}
     </Route>

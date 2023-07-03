@@ -1,8 +1,5 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
+import { Form, InputGroup, Button, FormControl } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchBox() {
@@ -14,7 +11,7 @@ export default function SearchBox() {
   };
 
   return (
-    <Form className="d-flex me-auto" onSubmit={submitHandler}>
+    <Form className="d-flex me-auto w-100" onSubmit={submitHandler}>
       <InputGroup>
         <FormControl
           type="text"

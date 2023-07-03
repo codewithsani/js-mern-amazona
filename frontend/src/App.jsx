@@ -115,7 +115,10 @@ function App() {
           {categories.map((category) => (
             <Nav.Item key={category}>
               <LinkContainer
-                to={`/searchcategory=${category}`}
+                to={{
+                  pathname: "/search",
+                  search: `?category=${category}`,
+                }}
                 onClick={() => setSidebarIsOpen(false)}
               >
                 <Nav.Link>{category}</Nav.Link>

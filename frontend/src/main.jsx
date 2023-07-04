@@ -30,6 +30,7 @@ import AdminRoute from "./components/AdminRoute";
 import DashboardScreen from "./screens/DashboardScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
+import OrderListScreen from "./screens/OrderListScreen";
 
 axios.defaults.baseURL = import.meta.env.DEV ? "http://localhost:5000" : "/";
 
@@ -96,6 +97,14 @@ const router = createBrowserRouter(
         element={
           <AdminRoute>
             <DashboardScreen />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/admin/orders"
+        element={
+          <AdminRoute>
+            <OrderListScreen />
           </AdminRoute>
         }
       />

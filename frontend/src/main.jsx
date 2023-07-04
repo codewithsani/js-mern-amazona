@@ -32,6 +32,7 @@ import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
 import UserListScreen from "./screens/UserListScreen";
+import UserEditScreen from "./screens/UserEditScreen";
 
 axios.defaults.baseURL = import.meta.env.DEV ? "http://localhost:5000" : "/";
 
@@ -130,6 +131,14 @@ const router = createBrowserRouter(
         element={
           <AdminRoute>
             <ProductEditScreen />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/admin/user/:id"
+        element={
+          <AdminRoute>
+            <UserEditScreen />
           </AdminRoute>
         }
       />

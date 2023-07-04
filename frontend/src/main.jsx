@@ -25,6 +25,9 @@ import OrderScreen from "./screens/OrderScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SearchScreen from "./screens/SearchScreen";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminRoute from "./components/AdminRoute";
+import DashboardScreen from "./screens/DashboardScreen.jsx";
 
 axios.defaults.baseURL = import.meta.env.DEV ? "http://localhost:5000" : "/";
 
@@ -37,13 +40,17 @@ const router = createBrowserRouter(
       <Route path="/search" element={<SearchScreen />} />
       <Route path="/signin" element={<SigninScreen />} />
       <Route path="/signup" element={<SignupScreen />} />
-      <Route path="/profile" element={<ProfileScreen />} />
-      <Route path="/placeorder" element={<PlaceOrderScreen />} />
-      <Route path="/order/:id" element={<OrderScreen />} />
-      <Route path="/orderhistory" element={<OrderHistoryScreen />} />
-      <Route path="/shipping" element={<ShippingAddressScreen />} />
-      <Route path="/payment" element={<PaymentMethodScreen />} />
-
+      <Route path="" element={<ProtectedRoute />}>
+        <Route path="/profile" element={<ProfileScreen />} />
+        <Route path="/placeorder" element={<PlaceOrderScreen />} />
+        <Route path="/order/:id" element={<OrderScreen />} />
+        <Route path="/orderhistory" element={<OrderHistoryScreen />} />
+        <Route path="/shipping" element={<ShippingAddressScreen />} />
+        <Route path="/payment" element={<PaymentMethodScreen />} />
+      </Route>
+      <Route path="" element={<AdminRoute />}>
+        <Route path="/admin/dashboard" element={<DashboardScreen />} />
+      </Route>
       {/* <Route path="dashboard" element={<Dashboard />} /> */}
       {/* ... etc. */}
     </Route>

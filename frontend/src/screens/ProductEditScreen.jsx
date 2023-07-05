@@ -218,7 +218,7 @@ export default function ProductEditScreen() {
               ))}
             </ListGroup>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="additionalImageFile">
+          <Form.Group className="mb-3" controlId="UploadAdditionalImageFile">
             <Form.Label>Upload Aditional Image</Form.Label>
             <Form.Control
               type="file"

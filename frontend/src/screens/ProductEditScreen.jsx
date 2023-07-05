@@ -205,6 +205,12 @@ export default function ProductEditScreen() {
           </Form.Group>
           <Form.Group className="mb-3" controlId="additionalImage">
             <Form.Label>Additional Images</Form.Label>
+            <Form.Control
+              value={images.map((x) => (
+                <ListGroup key={x}>{x}</ListGroup>
+              ))}
+              onChange={(e) => setImages(e.target.value)}
+            />
             {images.length === 0 && <MessageBox>No image</MessageBox>}
             <ListGroup variant="flush">
               {images.map((x) => (

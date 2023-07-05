@@ -1,5 +1,6 @@
 import express from "express";
 import multer from "multer";
+import dotenv from "dotenv";
 import { v2 as cloudinary } from "cloudinary";
 import streamifier from "streamifier";
 import { isAdmin, isAuth } from "../utils.js";
@@ -7,7 +8,7 @@ import { isAdmin, isAuth } from "../utils.js";
 const upload = multer();
 
 const uploadRouter = express.Router();
-
+dotenv.config();
 uploadRouter.post(
   "/",
   isAuth,
@@ -15,9 +16,9 @@ uploadRouter.post(
   upload.single("file"),
   async (req, res) => {
     cloudinary.config({
-      cloud_name: "doz6g6qiz",
-      api_key: "722356166455688",
-      api_secret: "0D5_iXvKaK0BLCb3Gl9GVgeJ2AI",
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
+      api_secret: process.env.CLOUDINARY_API_SECRET,
     });
     const streamUpload = (req) => {
       return new Promise((resolve, reject) => {

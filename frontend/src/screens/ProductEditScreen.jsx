@@ -172,7 +172,6 @@ export default function ProductEditScreen() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              autoComplete="on"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="slug">
@@ -204,12 +203,8 @@ export default function ProductEditScreen() {
             <Form.Control type="file" onChange={uploadFileHandler} />
             {loadingUpload && <LoadingBox></LoadingBox>}
           </Form.Group>
-          <Form.Group className="mb-3" controlId="images">
+          <Form.Group className="mb-3" controlId="additionalImage">
             <Form.Label>Additional Images</Form.Label>
-            <Form.Control
-              value={images}
-              onChange={(e) => setImages(e.target.value)}
-            />
             {images.length === 0 && <MessageBox>No image</MessageBox>}
             <ListGroup variant="flush">
               {images.map((x) => (
@@ -222,8 +217,8 @@ export default function ProductEditScreen() {
               ))}
             </ListGroup>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="UploadAdditionalImageFile">
-            <Form.Label>Upload Additional Image</Form.Label>
+          <Form.Group className="mb-3" controlId="additionalImageFile">
+            <Form.Label>Upload Aditional Image</Form.Label>
             <Form.Control
               type="file"
               onChange={(e) => uploadFileHandler(e, true)}

@@ -203,12 +203,10 @@ export default function ProductEditScreen() {
             <Form.Control type="file" onChange={uploadFileHandler} />
             {loadingUpload && <LoadingBox></LoadingBox>}
           </Form.Group>
-          <Form.Group className="mb-3" controlId="additionalImage">
+          <Form.Group className="mb-3" controlId="Images">
             <Form.Label>Additional Images</Form.Label>
             <Form.Control
-              value={images.map((x) => (
-                <ListGroup key={x}>{x}</ListGroup>
-              ))}
+              value={images}
               onChange={(e) => setImages(e.target.value)}
             />
             {images.length === 0 && <MessageBox>No image</MessageBox>}

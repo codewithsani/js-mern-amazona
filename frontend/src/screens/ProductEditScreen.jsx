@@ -172,6 +172,7 @@ export default function ProductEditScreen() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+              autoComplete="on"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="slug">
